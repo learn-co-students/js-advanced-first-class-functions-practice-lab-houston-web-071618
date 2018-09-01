@@ -13,14 +13,14 @@ const logDriversByHometown = function (drivers, hometown) {
 };
 const driversByRevenue = function (drivers) {
     // console.log(drivers) why use .slice()?
-    return drivers.slice().sort(function (driverA, driverB) {
+    return drivers.slice(0).sort(function (driverA, driverB) {
       return driverA.revenue - driverB.revenue;
-    });
+    });//.slice(0)expression creates a copy of the array starting at element 0; as does .slice()
 };
 const driversByName  = function(drivers) {
-  return drivers.slice().sort(function (driverA, driverB) {
+  return drivers.slice(0).sort(function (driverA, driverB) {
       return driverA.name.localeCompare(driverB.name);
-  });
+  });//.slice(0)expression creates a copy of the array starting at element 0; as does .slice()
 };
 const totalRevenue = function(drivers) {
   return drivers.reduce(function (total, currentDriver){
